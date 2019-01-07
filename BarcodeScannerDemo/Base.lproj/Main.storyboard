@@ -18,28 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Bxn-QW-nfe">
-                                <rect key="frame" x="134.5" y="238.5" width="106" height="190"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTS-BB-taV">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="30"/>
-                                        <state key="normal" title="QRCodeReader"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3Z-3S-3D9">
-                                        <rect key="frame" x="0.0" y="80" width="106" height="30"/>
-                                        <state key="normal" title="RSBarcodes"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibI-kY-mqR">
-                                        <rect key="frame" x="0.0" y="160" width="106" height="30"/>
-                                        <state key="normal" title="Native"/>
-                                        <connections>
-                                            <segue destination="mJT-LK-UET" kind="show" id="UHP-iH-3DI"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barcode Scanners Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWQ-j8-Nji">
-                                <rect key="frame" x="0.0" y="70" width="375" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibI-kY-mqR">
+                                <rect key="frame" x="104.5" y="297.5" width="166" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="📷 scan"/>
+                                <connections>
+                                    <segue destination="mJT-LK-UET" kind="show" id="UHP-iH-3DI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scanner Demo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWQ-j8-Nji">
+                                <rect key="frame" x="85" y="70" width="205" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,10 +35,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="iWQ-j8-Nji" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4Lu-Ol-s1P"/>
-                            <constraint firstItem="Bxn-QW-nfe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EOB-s6-Kyx"/>
-                            <constraint firstItem="Bxn-QW-nfe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LH6-QD-Kjh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iWQ-j8-Nji" secondAttribute="trailing" id="gk6-vM-d5e"/>
+                            <constraint firstItem="iWQ-j8-Nji" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4Lu-Ol-s1P"/>
+                            <constraint firstItem="ibI-kY-mqR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7Ip-QQ-eIE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iWQ-j8-Nji" secondAttribute="trailing" id="gk6-vM-d5e"/>
+                            <constraint firstItem="ibI-kY-mqR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jzx-3k-5f4"/>
                             <constraint firstItem="iWQ-j8-Nji" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="prF-sR-efq"/>
                             <constraint firstItem="iWQ-j8-Nji" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qwf-eU-boO"/>
                         </constraints>
@@ -74,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHk-rW-LVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1311" y="819"/>
+            <point key="canvasLocation" x="1577" y="27"/>
         </scene>
     </scenes>
 </document>

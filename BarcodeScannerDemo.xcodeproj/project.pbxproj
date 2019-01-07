@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59967B5821E3588B0028C182 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59967B5721E3588B0028C182 /* ScannerView.swift */; };
 		59C7F5E721D660C6005E8F86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7F5E621D660C6005E8F86 /* AppDelegate.swift */; };
 		59C7F5E921D660C6005E8F86 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7F5E821D660C6005E8F86 /* ScannerViewController.swift */; };
 		59C7F5EC21D660C6005E8F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59C7F5EA21D660C6005E8F86 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59967B5721E3588B0028C182 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		59C7F5E321D660C6005E8F86 /* BarcodeScannerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeScannerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C7F5E621D660C6005E8F86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59C7F5E821D660C6005E8F86 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				59C7F5E621D660C6005E8F86 /* AppDelegate.swift */,
 				59C7F5E821D660C6005E8F86 /* ScannerViewController.swift */,
+				59967B5721E3588B0028C182 /* ScannerView.swift */,
 				59C7F5EA21D660C6005E8F86 /* Main.storyboard */,
 				59C7F5ED21D660C7005E8F86 /* Assets.xcassets */,
 				59C7F5EF21D660C7005E8F86 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59967B5821E3588B0028C182 /* ScannerView.swift in Sources */,
 				59C7F5E921D660C6005E8F86 /* ScannerViewController.swift in Sources */,
 				59C7F5E721D660C6005E8F86 /* AppDelegate.swift in Sources */,
 			);
@@ -283,7 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SM92YZ5DXS;
+				DEVELOPMENT_TEAM = 2H634JM33L;
 				INFOPLIST_FILE = BarcodeScannerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -302,7 +306,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SM92YZ5DXS;
+				DEVELOPMENT_TEAM = 2H634JM33L;
 				INFOPLIST_FILE = BarcodeScannerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
