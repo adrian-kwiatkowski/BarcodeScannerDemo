@@ -9,10 +9,15 @@
 import AVFoundation
 import UIKit
 
+protocol ScannerViewDelegate: class {
+    func scannerViewDidFoundBarCode(_ scannerView: ScannerView, code: String)
+}
+
 final class ScannerView: UIView {
     
     private var captureSession: AVCaptureSession!
     private var previewLayer: AVCaptureVideoPreviewLayer!
+    weak var delegate: ScannerViewDelegate?
     
     convenience init(frame: CGRect, scanArea: CGRect) {
         self.init(frame: frame)
@@ -82,10 +87,6 @@ final class ScannerView: UIView {
             captureSession.stopRunning()
         }
     }
-    
-    func found(code: String) {
-        print(code)
-    }
 }
 
 // MARK: - AVCaptureMetadataOutputObjectsDelegate
@@ -93,13 +94,14 @@ extension ScannerView: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
-        captureSession.stopRunning()
+//        captureSession.stopRunning()
         
         if let metadataObject = metadataObjects.first {
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            found(code: stringValue)
+            
+//            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            delegate?.scannerViewDidFoundBarCode(self, code: stringValue)
         }
     }
 }

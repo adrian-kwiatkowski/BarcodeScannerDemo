@@ -6,7 +6,8 @@ import UIKit
 class ScannerViewController: UIViewController {
     
     private var scannerView: ScannerView?
-    private var overlayView: UIView = UIView()
+    private var overlayView: OverlayView?
+    private var codeLabel: UILabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,23 +22,19 @@ class ScannerViewController: UIViewController {
         
         scannerView = ScannerView(frame: view.layer.bounds, scanArea: scanArea)
         view.addSubview(scannerView!)
+        scannerView?.delegate = self
         
-        let testView = UIView(frame: scanArea)
-        testView.layer.borderWidth = 1
-        testView.layer.borderColor = UIColor.white.cgColor
-        view.addSubview(testView)
-        
+        overlayView = OverlayView(frame: view.layer.bounds, maskRect: scanArea)
+        view.addSubview(overlayView!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         scannerView?.startRunning()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         scannerView?.stopRunning()
     }
 }
@@ -47,5 +44,12 @@ extension ScannerViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+}
+
+// MARK: - ScannerViewDelegate
+extension ScannerViewController: ScannerViewDelegate {
+    func scannerViewDidFoundBarCode(_ scannerView: ScannerView, code: String) {
+        overlayView?.setCode(string: code)
     }
 }
