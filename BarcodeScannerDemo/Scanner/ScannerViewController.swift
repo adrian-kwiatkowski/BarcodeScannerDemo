@@ -14,17 +14,14 @@ class ScannerViewController: UIViewController {
         
         view.backgroundColor = UIColor.black
         
-        let x = view.frame.minX + 30
-        let y = view.frame.maxY / 3
-        let width = view.frame.width - 60
-        let height = view.frame.height / 3
-        let scanArea = CGRect(x: x, y: y, width: width, height: height)
+        let vcBounds = view.bounds
+        let scanArea = calculateScanArea(from: vcBounds)
         
-        scannerView = ScannerView(frame: view.layer.bounds, scanArea: scanArea)
+        scannerView = ScannerView(frame: vcBounds, scanArea: scanArea)
         view.addSubview(scannerView!)
         scannerView?.delegate = self
         
-        overlayView = OverlayView(frame: view.layer.bounds, maskRect: scanArea)
+        overlayView = OverlayView(frame: vcBounds, maskRect: scanArea)
         view.addSubview(overlayView!)
     }
     
@@ -36,6 +33,15 @@ class ScannerViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         scannerView?.stopRunning()
+    }
+    
+    func calculateScanArea(from rect: CGRect) -> CGRect {
+        let x = rect.minX + 30
+        let y = rect.maxY / 3
+        let width = rect.width - 60
+        let height = rect.height / 3
+        
+        return CGRect(x: x, y: y, width: width, height: height)
     }
 }
 

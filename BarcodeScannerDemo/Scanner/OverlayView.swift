@@ -17,20 +17,29 @@ final class OverlayView: UIView {
         
         backgroundColor = UIColor.black.withAlphaComponent(0.75)
         
+        layer.mask = configureMask(from: maskRect)
+        
+        setupCodeLabel(from: frame)
+    }
+    
+    func configureMask(from rect: CGRect) -> CALayer {
         let maskLayer = CAShapeLayer()
         maskLayer.frame = layer.bounds
-        let viewPath = UIBezierPath(roundedRect: maskRect, cornerRadius: 20.0)
+        let viewPath = UIBezierPath(roundedRect: rect, cornerRadius: 20.0)
         
         let path = UIBezierPath(rect: layer.bounds)
         path.append(viewPath)
         maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
         maskLayer.path = path.cgPath
-        layer.mask = maskLayer
         
-        let x = frame.minX + 30
-        let y = frame.maxY - (frame.maxY / 5)
-        let width = frame.width - 60
-        let height = frame.height / 3
+        return maskLayer
+    }
+    
+    func setupCodeLabel(from viewFrame: CGRect) {
+        let x = viewFrame.minX + 30
+        let y = viewFrame.maxY - (viewFrame.maxY / 5)
+        let width = viewFrame.width - 60
+        let height = viewFrame.height / 3
         let labelFrame = CGRect(x: x, y: y, width: width, height: height)
         
         codeLabel = UILabel(frame: labelFrame)
