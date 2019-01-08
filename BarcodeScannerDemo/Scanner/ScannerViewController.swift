@@ -23,6 +23,8 @@ class ScannerViewController: UIViewController {
         
         overlayView = OverlayView(frame: vcBounds, maskRect: scanArea)
         view.addSubview(overlayView!)
+        
+        overlayView?.closeButton.addTarget(self, action: #selector(close), for: UIControl.Event.touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +44,10 @@ class ScannerViewController: UIViewController {
         let height = rect.height / 3
         
         return CGRect(x: x, y: y, width: width, height: height)
+    }
+    
+    @objc func close() {
+        dismiss(animated: true, completion: nil)
     }
 }
 
