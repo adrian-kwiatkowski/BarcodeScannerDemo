@@ -100,7 +100,7 @@ extension ScannerView: AVCaptureMetadataOutputObjectsDelegate {
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }
             
-//            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             delegate?.scannerViewDidFoundBarCode(self, code: stringValue)
         }
     }

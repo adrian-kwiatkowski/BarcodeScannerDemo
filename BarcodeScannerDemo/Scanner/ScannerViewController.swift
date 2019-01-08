@@ -8,6 +8,7 @@ class ScannerViewController: UIViewController {
     private var scannerView: ScannerView?
     private var overlayView: OverlayView?
     private var codeLabel: UILabel = UILabel()
+    private var scannedCode: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,18 @@ extension ScannerViewController {
 // MARK: - ScannerViewDelegate
 extension ScannerViewController: ScannerViewDelegate {
     func scannerViewDidFoundBarCode(_ scannerView: ScannerView, code: String) {
-        overlayView?.setCode(string: code)
+        scannedCode = code
+        
+        performSegue(withIdentifier: "goToResults", sender: self)
+    }
+}
+
+
+// MARK: - Transition
+extension ScannerViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResults", let destinationVC = segue.destination as? ResultsViewController {
+            destinationVC.codeToDisplay = scannedCode
+        }
     }
 }

@@ -59,10 +59,56 @@
                         <viewLayoutGuide key="safeArea" id="p7a-Cn-Jh4"/>
                     </view>
                     <navigationItem key="navigationItem" id="yh2-Yb-14X"/>
+                    <connections>
+                        <segue destination="Gnr-1P-cZs" kind="show" identifier="goToResults" id="cFo-4K-W3q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHk-rW-LVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1577" y="27"/>
+            <point key="canvasLocation" x="1450" y="134"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="sae-tD-yRf">
+            <objects>
+                <viewController id="Gnr-1P-cZs" customClass="ResultsViewController" customModule="BarcodeScannerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jnt-iw-pNf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txR-9B-2IG">
+                                <rect key="frame" x="166.5" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3u-og-NE5">
+                                <rect key="frame" x="158.5" y="575" width="58" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="Gnr-1P-cZs" eventType="touchUpInside" id="qr3-rJ-tu3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="txR-9B-2IG" firstAttribute="centerX" secondItem="Jnt-iw-pNf" secondAttribute="centerX" id="2VZ-MY-Qcr"/>
+                            <constraint firstItem="fBN-K6-Wcf" firstAttribute="bottom" secondItem="r3u-og-NE5" secondAttribute="bottom" constant="50" id="dU8-w0-rVe"/>
+                            <constraint firstItem="txR-9B-2IG" firstAttribute="centerY" secondItem="Jnt-iw-pNf" secondAttribute="centerY" id="iYf-ba-yAu"/>
+                            <constraint firstItem="r3u-og-NE5" firstAttribute="centerX" secondItem="Jnt-iw-pNf" secondAttribute="centerX" id="pSv-d1-xRI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fBN-K6-Wcf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jfX-gt-Aza">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ohT-ET-Fj5"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="codeLabel" destination="txR-9B-2IG" id="qKt-R4-vI4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BYR-s9-IVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3220" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
