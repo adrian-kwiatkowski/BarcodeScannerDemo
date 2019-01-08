@@ -10,7 +10,6 @@ import UIKit
 
 final class OverlayView: UIView {
     
-    private var codeLabel: UILabel = UILabel()
     public var closeButton: UIButton = UIButton()
     
     convenience init(frame: CGRect, maskRect: CGRect) {
@@ -20,7 +19,6 @@ final class OverlayView: UIView {
         
         layer.mask = configureMask(from: maskRect)
         
-        setupCodeLabel(from: frame)
         setupCloseButton()
     }
     
@@ -37,20 +35,6 @@ final class OverlayView: UIView {
         return maskLayer
     }
     
-    func setupCodeLabel(from viewFrame: CGRect) {
-        let x = viewFrame.minX + 30
-        let y = viewFrame.maxY - (viewFrame.maxY / 5)
-        let width = viewFrame.width - 60
-        let height = viewFrame.height / 3
-        let labelFrame = CGRect(x: x, y: y, width: width, height: height)
-        
-        codeLabel = UILabel(frame: labelFrame)
-        codeLabel.textAlignment = .center
-        codeLabel.text = ""
-        codeLabel.textColor = UIColor.white
-        addSubview(codeLabel)
-    }
-    
     func setupCloseButton() {
         closeButton.backgroundColor = UIColor.clear
         closeButton.tintColor = UIColor.white
@@ -64,9 +48,5 @@ final class OverlayView: UIView {
         closeButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10.0).isActive = true
         closeButton.widthAnchor.constraint(equalToConstant: 40.0).isActive = true
         closeButton.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
-    }
-    
-    func setCode(string: String) {
-        codeLabel.text = string
     }
 }
